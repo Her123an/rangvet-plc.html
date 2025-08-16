@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RANGVet Products</title>
+  <meta name="description" content="Founded in 1996, RANGVet PLC is transforming Ethiopia’s agriculture and veterinary sectors through innovative products, expert guidance, and impactful services.">
+  <meta name="keywords" content="RANGVet, Veterinary, Agrochemicals, Seeds, Ethiopia, Agriculture, Animal Health, Fertilizers, Insecticides, Fungicides, Herbicides">
+  <meta name="author" content="RANGVet PLC">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore high-quality veterinary medicines, pesticides, herbicides, and hybrid seeds from RANGVet PLC. Trusted agricultural solutions in Ethiopia.">
+  <meta name="keywords" content="Veterinary Medicine Ethiopia, Agricultural Products, Pesticides, Herbicides, Seeds, RANGVet, Livestock Drugs, Agrochemicals">
+  <meta name="author" content="RANGVet PLC">
+  <meta property="og:title" content="RANGVet Products">
+  <meta property="og:description" content="Discover premium veterinary products, agrochemicals, and seeds by RANGVet PLC.">
+  <meta property="og:image" content="/photo_2025-04-10_12-27-49.jpg">
+  <meta property="og:type" content="website">
+  <style>
+    /* Ensure horizontal scrollbar is visible */
+    .scroll-container {
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: thin;
+      scrollbar-color: #6b7280 #f1f5f9; /* Customize scrollbar color */
+    }
+
+    /* For webkit browsers like Chrome and Safari */
+    .scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .scroll-container::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+
+    .scroll-container::-webkit-scrollbar-thumb {
+      background-color: #6b7280;
+      border-radius: 10px;
+    }
+
+    .card-content {
+      max-height: 100px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+ <!-- HEADER -->
+<header class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <img src="images/rangvet_logo.png" alt="RANGVet Logo" class="h-20" />
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6 items-center">
+      <a href="index.html" class="hover:text-green-700">Home</a>
+
+      <!-- Dropdown for About Us -->
+      <div class="relative">
+        <button id="aboutDropdownBtn" class="hover:text-green-700 focus:outline-none">
+          About Us
+        </button>
+        <div id="aboutDropdownMenu" class="hidden absolute bg-white shadow-lg rounded mt-2 z-10">
+          <a href="about.html" class="block px-4 py-2 text-sm text-[#22361B] hover:bg-gray-100">About Page</a>
+          <a href="companies.html" class="block px-4 py-2 text-sm text-[#22361B] hover:bg-gray-100">Company Page</a>
+        </div>
+      </div>
+
+      <a href="service.html" class="hover:text-green-700">Services</a>
+      <a href="product.html" class="hover:text-green-700">Products</a>
+      <a href="contact.html" class="hover:text-green-700">Contact</a>
+    </nav>
+
+    <!-- Get in Touch button -->
+    <a href="contact.html" class="ml-4 inline-block bg-[#C0712F] text-white px-4 py-2 rounded hover:bg-green-800 transition">
+      Get in Touch
+    </a>
+
+    <!-- Mobile Menu Button (hamburger) -->
+    <div class="md:hidden">
+      <button id="mobileMenuBtn" class="focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6 text-green-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobileMenu" class="md:hidden hidden flex-col bg-white px-6 py-4 shadow-md space-y-4">
+    <a href="index.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Home
+    </a>
+
+    <!-- Mobile About Us dropdown -->
+    <button id="aboutDropdownBtnMobile" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      About Us <span>▾</span>
+    </button>
+    <div id="aboutDropdownMenuMobile" class="hidden pl-4 space-y-2">
+      <a href="about.html" class="text-sm text-[#22361B] hover:text-green-700 block">About Page</a>
+      <a href="companies.html" class="text-sm text-[#22361B] hover:text-green-700 block">Company Page</a>
+    </div>
+
+    <a href="service.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Services
+    </a>
+    <a href="product.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Products
+    </a>
+    <a href="Contact.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Contact
+    </a>
+
+    <!-- Get in Touch button -->
+    <a href="Contact.html" class="mt-4 bg-[#C0712F] text-white px-4 py-2 rounded hover:bg-orange-700 w-fit mx-auto block">
+      Get in Touch
+    </a>
+  </div>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Mobile menu toggle button
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Mobile About Us dropdown toggle
+    const aboutDropdownBtnMobile = document.getElementById("aboutDropdownBtnMobile");
+    const aboutDropdownMenuMobile = document.getElementById("aboutDropdownMenuMobile");
+
+    aboutDropdownBtnMobile.addEventListener("click", () => {
+      aboutDropdownMenuMobile.classList.toggle("hidden");
+    });
+
+    // Desktop About Us dropdown toggle on click + close when clicking outside
+    const aboutDropdownBtn = document.getElementById("aboutDropdownBtn");
+    const aboutDropdownMenu = document.getElementById("aboutDropdownMenu");
+
+    if (aboutDropdownBtn && aboutDropdownMenu) {
+      aboutDropdownBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        aboutDropdownMenu.classList.toggle("hidden");
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!aboutDropdownBtn.contains(e.target) && !aboutDropdownMenu.contains(e.target)) {
+          aboutDropdownMenu.classList.add("hidden");
+        }
+      });
+    }
+  });
+</script>
+
+<!-- Page Heading -->
+<section class="bg-[#005B41] text-white py-12 px-4 md:px-0 text-center">
+  <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-wide">
+    Our Products
+  </h1>
+  <p class="max-w-3xl mx-auto text-lg md:text-xl font-light opacity-90">
+    Explore our wide range of premium veterinary medicines, pesticides, herbicides, and hybrid seeds. Trusted solutions tailored for Ethiopian agriculture.
+  </p>
+</section>
+
+</body>
+</html>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="p-6 space-y-16">
+
+ <!-- Veterinary Drugs Section -->
+<section>
+  <h2 class="text-2xl font-bold text-[#005B41] mb-4">Veterinary Drugs</h2>
+  <div class="scroll-container flex space-x-4 p-4 bg-white rounded-2xl border border-gray-300">
+    <!-- Product Card 1 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/rangalben.png" alt="RANGALBEN" class="w-24 h-24 object-contain rounded" />
+      <div class="flex flex-col justify-between flex-grow">
+        <h3 class="font-bold text-lg">RANGALBEN</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Dewormer</p>
+          <p><strong>Active Ingredient:</strong>Albendazole 2500mg</p>
+          <p><strong>Description:</strong>Used for the 
+           <br> treatment and control 
+           <br> of worm infestations in livestock.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 2 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/securidium.png" alt="SECURIDIUM" class="w-24 h-24 object-contain rounded" />
+      <div class="flex flex-col justify-between flex-grow">
+        <h3 class="font-bold text-lg">SECURIDIUM</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Trypanocidal Drug</p>
+          <p><strong>Description:</strong> Used for the 
+           <br> treatment of 
+           <br> trypanosomiasis in livestock.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 3 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/ethidium.png" alt="ETHIDIUM" class="w-24 h-24 object-contain rounded" />
+      <div class="flex flex-col justify-between flex-grow">
+        <h3 class="font-bold text-lg">ETHIDIUM</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Trypanocidal Drug</p>
+          <p><strong>Description:</strong> Effective against
+           <br>T. Congolese and
+           <br>T. Vivax infections in cattle.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 4 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/survidium.png" alt="SURVIDIUM" class="w-24 h-24 object-contain rounded" />
+      <div class="flex flex-col justify-between flex-grow">
+        <h3 class="font-bold text-lg">SURVIDIUM</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Trypanocidal Drug</p>
+          <p><strong>Description:</strong> Used for the 
+           <br> control and 
+           <br> prevention of trypanosomiasis.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 5 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/inomazine.png" alt="INOMAZENE" class="w-24 h-24 object-contain rounded" />
+      <div class="flex flex-col justify-between flex-grow">
+        <h3 class="font-bold text-lg">INOMAZENE</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Trypanocidal Drug</p>
+          <p><strong>Description:</strong> Useful in treating 
+           <br> and preventing gonorrhea 
+           <br> and piroplasmosis in cattle,
+          <br>  sheep, and goats.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 6 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/oxytetracycline.png" alt="OXYTETRACYCLINE" class="w-24 h-24 object-contain rounded" />
+      <div class="flex flex-col justify-between flex-grow">
+        <h3 class="font-bold text-lg">OXYTETRACYCLINE 10% and 20%</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong>Antibacterial Drugs</p>
+          <p><strong>Description:</strong>Used to treat infectious 
+           <br> diseases caused by microorganisms
+           <br>  in cattle, sheep, goats,
+          <br>  pigs, chickens, cats, and dogs.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 7 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/oxyvet.png" alt="OXYVET 10% and 20%" class="w-24 h-24 object-contain rounded" />
+      <div class="flex flex-col justify-between flex-grow">
+        <h3 class="font-bold text-lg">OXYVET 10% and 20%</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Antibacterial Drug</p>
+          <p><strong>Description:</strong> Used to treat
+           <br>  diseases caused by microorganisms
+           <br>  in cattle, sheep, 
+          <br> goats, pigs, and horses.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 8 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/cyclospray.png" alt="CYCLOSPRAY" class="w-24 h-24 object-contain rounded" />
+      <div class="flex flex-col justify-between flex-grow">
+        <h3 class="font-bold text-lg">CYCLOSPRAY</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Antibacterial Drug</p>
+          <p><strong>Description:</strong> Used to treat infections
+           <br>  and wounds caused by
+           <br>  microorganisms on the external organs
+          <br>  of any animal species,
+          <br>  as well as those susceptible 
+         <br> to tetracycline.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 9 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/amprolium.png" alt="AMPROLIUM 20%" class="w-24 h-24 object-contain rounded" />
+      <div class="flex flex-col justify-between flex-grow">
+        <h3 class="font-bold text-lg">AMPROLIUM 20%</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Poultry Drug</p>
+          <p><strong>Description:</strong> Used to treat coccidiosis, 
+           <br> a disease that affects the
+          <br>  intestines of chickens of all ages.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Pesticides & Herbicides Section -->
+<section>
+  <h2 class="text-2xl font-bold text-[#005B41] mb-4">Pesticides & Herbicides</h2>
+  <div class="scroll-container flex space-x-4 p-4 bg-white rounded-2xl border border-gray-300">
+    <!-- Product Card 1 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/celphos.png" alt="Celphos" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">CELPHOS</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Insecticide</p>
+          <p><strong>Active Ingredient:</strong> Aluminum phosphide 56%</p>
+          <p><strong>Description:</strong> Kills barnyard pests, eggs, larvae, 
+           <br> and pupae in stored crops and animal feed.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 2 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/tricel.png" alt="Tricel" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">TRICEL</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Insecticide</p>
+          <p><strong>Active Ingredient:</strong> Chlorpyriphos 48% EC</p>
+          <p><strong>Description:</strong> Controls termites, aphids, fruit flies,
+           <br>  and pests on various crops.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 3 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/rangate.png" alt="RANGATE" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">RANGATE</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Insecticide</p>
+          <p><strong>Active Ingredient:</strong> Lambda Cyhalothrin 5% EC</p>
+          <p><strong>Description:</strong> Controls African bollworm, fall
+           <br> armyworm,and more on various crops.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 4 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/profex.png" alt="PROFEX" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">PROFEX</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Insecticide</p>
+          <p><strong>Description:</strong> Controls bollworm, thrips, mites, 
+           <br> and more on vegetables and fruits.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 5 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/jaithion.png" alt="JAITHION" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">JAITHION</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Insecticide</p>
+          <p><strong>Active Ingredient:</strong> Malathion 50% EC</p>
+          <p><strong>Description:</strong> Controls stem borers, cutworms, and
+           <br>  pests on various crops.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 6 -->
+    <div class="inline-block min-w-[470px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/imidacel.png" alt="IMIDACEL Insecticide" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">IMIDACEL</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Insecticide</p>
+          <p><strong>Active Ingredient:</strong> Profenophos 50% EC</p>
+          <p><strong>Description:</strong> Systemic insecticide effective on aphids,
+           <br>  whiteflies, and jassids in vegetables.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 7 -->
+    <div class="inline-block min-w-[470px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/hitcel.png" alt="HITCEL Insecticide" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">HITCEL</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Insecticide</p>
+          <p><strong>Active Ingredient:</strong> Profenofos 40% + Cypermethrin 4%</p>
+          <p><strong>Description:</strong> Controls aphids, bollworms, and more on
+           <br>  vegetables and corn.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 8 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/excel_speed.png" alt="EXCEL SPEED" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">EXCEL SPEED</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Herbicide</p>
+          <p><strong>Active Ingredient:</strong> Glyphosate 71% SG</p>
+          <p><strong>Description:</strong> Herbicide used to control broadleaf 
+           <br> and grass weeds in coffee fields and unused land.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 9 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/glycel.png" alt="GLYCEL" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">GLYCEL</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Herbicide</p>
+          <p><strong>Active Ingredient:</strong> Glyphosate 41% SL</p>
+          <p><strong>Description:</strong> Non-selective chemical used to 
+           <br> control grass and broadleaf weeds in coffee fields,
+          <br>  orchards, and ornamental plants.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 10 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/wad_killer.png" alt="WADKILLER" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">WADKILLER</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Herbicide</p>
+          <p><strong>Active Ingredient:</strong> 2-4-D Amine 720 SL</p>
+          <p><strong>Description:</strong> Herbicide used to control broadleaf 
+           <br> weeds in corn and teff fields.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 11 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/gawtphos.png" alt="GAWTPHOS" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">GAWTPHOS</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Herbicide</p>
+          <p><strong>Active Ingredient:</strong> Glyphosate 41% SL</p>
+          <p><strong>Description:</strong> Broad-spectrum herbicide for 
+           <br> coffee, tea, fruits, and ornamentals.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 12 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/srizole.png" alt="SRIZOLE" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">SRIZOLE</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Fungicide</p>
+          <p><strong>Active Ingredient:</strong> Propiconazole 25% EC</p>
+          <p><strong>Description:</strong> Controls powdery mildew on wheat,
+           <br>  vegetables, and fruits.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 13 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/caviet.png" alt="CAVIET" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">CAVIET</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Fungicide</p>
+          <p><strong>Description:</strong> Anti-fungal agent used to prevent and
+           <br>  control wheat borer in wheat fields.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seeds Section -->
+<section>
+  <h2 class="text-2xl font-bold text-[#005B41] mb-4">Seeds</h2>
+  <div class="scroll-container flex space-x-4 p-4 bg-white rounded-2xl border border-gray-300">
+    <!-- Product Card 1 -->
+    <div class="inline-block min-w-[370px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/red coach 1.png" alt="Red Coach" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">RED COACH</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Hybrid Onion Seed</p>
+          <p><strong>Description:</strong> High yield, long storage, 
+           <br> and full freshness.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 2 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/Randah 1.png" alt="Randah" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">RANDAH</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Hybrid Tomato Seed</p>
+          <p><strong>Description:</strong> Good leaf cover, reliable setting, and 
+           <br> firm fruits.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 3 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/Pedrola 2.png" alt="Pedrola" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">PEDROLA</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Iceberg Lettuce</p>
+          <p><strong>Description:</strong> Reliable performer under variable 
+           <br> conditions.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 4 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/Novaria 2.png" alt="Novaria" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">NOVARIA</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Cauliflower</p>
+          <p><strong>Description:</strong> Heat resistant, with dense and 
+           <br> white flowers.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 5 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/malbec 2.png" alt="MALBEC" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">MALBEC</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Hybrid Onion Seed</p>
+          <p><strong>Description:</strong> Good storage and Downy 
+           <br> Mildew tolerance.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 6 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/gamay 1.png" alt="GAMAY" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">GAMAY</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Hybrid Onion Seed</p>
+          <p><strong>Description:</strong> Strong foliage, high yielding, and
+           <br>  dark red color.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 7 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/sirius 2.png" alt="SIRIUS" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">SIRIUS</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Cauliflower</p>
+          <p><strong>Description:</strong> High yield, adaptable to various
+           <br>  conditions.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 8 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/Batool 2.png" alt="BATOOL" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">BATOOL</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Hybrid Tomato Seed</p>
+          <p><strong>Description:</strong> Firm, good color, and high yield.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Product Card 9 -->
+    <div class="inline-block min-w-[450px] bg-[#f3e5ca] rounded-xl shadow-md p-4 flex items-start space-x-4">
+      <img src="images/Kubwa 1.png" alt="KUBWA" class="w-24 h-24 object-contain rounded" />
+      <div>
+        <h3 class="font-bold text-lg">KUBWA</h3>
+        <div class="card-content text-sm">
+          <p><strong>Type:</strong> Hybrid Tomato Seed</p>
+          <p><strong>Description:</strong> Large plum, good color, and shelf-life.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-green-800 text-white py-12 mt-20">
+    <div class="text-center max-w-xl mx-auto">
+      <h3 class="text-3xl font-semibold mb-3">Let’s Grow Together</h3>
+      <p class="text-sm text-[#EFE6C2] mb-4">
+        The RANGVet Group is proud to serve Ethiopia’s future — and we’d love to work with you.
+      </p>
+      <a href="Contact.html" style="background-color: #D7B077; color: #22361B;" class="inline-block font-semibold px-6 py-2 rounded-full hover:bg-[#E5B983] transition">
+        Contact Us
+      </a>
+      <p class="mt-6 text-xs text-[#EFE6C2]">© 2025 RANGVet Group. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

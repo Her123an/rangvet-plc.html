@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore the core services offered by RANGVet PLC to empower farmers, livestock, and the land." />
+  <meta property="og:title" content="Our Services | RANGVet PLC" />
+  <meta property="og:description" content="Explore the services that empower Ethiopian farmers, livestock, and agricultural land." />
+  <meta property="og:image" content="URL_TO_YOUR_IMAGE" />
+  <meta property="og:url" content="URL_TO_YOUR_PAGE" />
+  <meta name="twitter:title" content="Our Services | RANGVet PLC" />
+  <meta name="twitter:description" content="Explore the services that empower Ethiopian farmers, livestock, and agricultural land." />
+  <meta name="twitter:image" content="URL_TO_YOUR_IMAGE" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ✅ Favicon line added here -->
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+  <title>Our Services | RANGVet PLC</title>
+</head>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body style="background-color:white; color: #22361B;">
+<!-- HEADER -->
+<header class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <img src="images/rangvet_logo.png" alt="RANGVet Logo" class="h-20" />
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6 items-center">
+      <a href="index.html" class="hover:text-green-700">Home</a>
+
+      <!-- Dropdown for About Us -->
+      <div class="relative">
+        <button id="aboutDropdownBtn" class="hover:text-green-700 focus:outline-none">
+          About Us
+        </button>
+        <div id="aboutDropdownMenu" class="hidden absolute bg-white shadow-lg rounded mt-2 z-10">
+          <a href="about.html" class="block px-4 py-2 text-sm text-[#22361B] hover:bg-gray-100">About Page</a>
+          <a href="companies.html" class="block px-4 py-2 text-sm text-[#22361B] hover:bg-gray-100">Company Page</a>
+        </div>
+      </div>
+
+      <a href="service.html" class="hover:text-green-700">Services</a>
+      <a href="product.html" class="hover:text-green-700">Products</a>
+      <a href="Contact.html" class="hover:text-green-700">Contact</a>
+    </nav>
+
+    <!-- Get in Touch button -->
+    <a href="Contact.html" class="ml-4 inline-block bg-[#C0712F] text-white px-4 py-2 rounded hover:bg-green-800 transition">
+      Get in Touch
+    </a>
+
+    <!-- Mobile Menu Button (hamburger) -->
+    <div class="md:hidden">
+      <button id="mobileMenuBtn" class="focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6 text-green-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobileMenu" class="md:hidden hidden flex-col bg-white px-6 py-4 shadow-md space-y-4">
+    <a href="index.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Home
+    </a>
+
+    <!-- Mobile About Us dropdown -->
+    <button id="aboutDropdownBtnMobile" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      About Us <span>▾</span>
+    </button>
+    <div id="aboutDropdownMenuMobile" class="hidden pl-4 space-y-2">
+      <a href="about.html" class="text-sm text-[#22361B] hover:text-green-700 block">About Page</a>
+      <a href="companies.html" class="text-sm text-[#22361B] hover:text-green-700 block">Company Page</a>
+    </div>
+
+    <a href="service.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Services
+    </a>
+    <a href="product.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Products
+    </a>
+    <a href="Contact.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Contact
+    </a>
+
+    <!-- Get in Touch button -->
+    <a href="Contact.html" class="mt-4 bg-[#C0712F] text-white px-4 py-2 rounded hover:bg-orange-700 w-fit mx-auto block">
+      Get in Touch
+    </a>
+  </div>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Mobile menu toggle button
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Mobile About Us dropdown toggle
+    const aboutDropdownBtnMobile = document.getElementById("aboutDropdownBtnMobile");
+    const aboutDropdownMenuMobile = document.getElementById("aboutDropdownMenuMobile");
+
+    aboutDropdownBtnMobile.addEventListener("click", () => {
+      aboutDropdownMenuMobile.classList.toggle("hidden");
+    });
+
+    // Desktop About Us dropdown toggle on click + close when clicking outside
+    const aboutDropdownBtn = document.getElementById("aboutDropdownBtn");
+    const aboutDropdownMenu = document.getElementById("aboutDropdownMenu");
+
+    if (aboutDropdownBtn && aboutDropdownMenu) {
+      aboutDropdownBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        aboutDropdownMenu.classList.toggle("hidden");
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!aboutDropdownBtn.contains(e.target) && !aboutDropdownMenu.contains(e.target)) {
+          aboutDropdownMenu.classList.add("hidden");
+        }
+      });
+    }
+  });
+</script>
+
+
+  <!-- Banner Section -->
+  <section class="relative">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+         <!-- Slide 1 -->
+         <div class="swiper-slide flex justify-center items-center">
+          <img src="images/photo_2025-05-06_13-14-34.jpg" alt="Banner Image 1" class="w-full h-[60vh] sm:h-[80vh] md:h-[90vh] object-contain">
+      </div>
+        <!-- Slide 1 -->
+        <div class="swiper-slide flex justify-center items-center">
+            <img src="images/photo_2025-05-06_12-01-31.jpg" alt="Banner Image 1" class="w-full h-[60vh] sm:h-[80vh] md:h-[90vh] object-contain">
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide flex justify-center items-center">
+          <img src="images/photo_2025-05-06_08-59-58.jpg" alt="Banner Image 2" class="w-full h-[60vh] sm:h-[80vh] md:h-[90vh] object-cover object-center">
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide flex justify-center items-center">
+          <img src="images/photo_2025-05-06_10-44-29.jpg" alt="Banner Image 3" class="w-full h-[60vh] sm:h-[80vh] md:h-[90vh] object-cover object-center">
+        </div>
+      </div>
+  </div>
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Navigation Buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+
+  <!-- Swiper.js Script (only once) -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
+  <!-- Our Services Section -->
+<section style="background-color: #FCF7F1;" class="max-w-6xl mx-auto px-6 py-16 text-center rounded-lg shadow-md mt-8">
+  <h1 class="text-4xl font-bold text-green-900 mb-6">Our Services</h1>
+  <h2 class="text-3xl font-bold mb-4">Empowering Farmers, Livestock, and the Land</h2>
+  <p class="text-sm mb-12">
+    At RANGVet PLC, we deliver more than just agricultural inputs — we provide expert-backed solutions that improve productivity, sustainability, and livelihoods across Ethiopia. With over two decades of experience, our services are trusted by farmers, cooperatives, and institutions nationwide.
+  </p>
+
+  <!-- Core Services -->
+  <h3 class="text-2xl font-bold text-center mb-8">Our Core Services</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+    <!-- Veterinary Drugs -->
+    <div style="background-color: #f3e5ca;" class="rounded-xl p-6 shadow-md flex items-start text-left">
+      <img src="images/vet services.png" alt="Veterinary Icon" class="h-12 w-12 mr-4">
+      <div>
+        <h4 class="text-xl font-bold mb-2">Veterinary Drugs</h4>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Vaccines</li>
+          <li>Vitamin supplements</li>
+          <li>Antibiotics and injectables</li>
+          <li>Customized programs for proper usage, dosing, and health strategies.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Agrochemicals -->
+    <div style="background-color: #f3e5ca;" class="rounded-xl p-6 shadow-md flex items-start text-left">
+      <img src="images/agro chemicals.png" alt="Agrochemicals Icon" class="h-12 w-12 mr-4">
+      <div>
+        <h4 class="text-xl font-bold mb-2">Agrochemicals</h4>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Fertilizers</li>
+          <li>Pesticides</li>
+          <li>Herbicides</li>
+          <li>Soil enhancers</li>
+          <li>Chosen to maximize yield while minimizing environmental impact.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Seed Import & Distribution -->
+    <div style="background-color: #f3e5ca;" class="rounded-xl p-6 shadow-md flex items-start text-left">
+      <img src="images/seeds.png" alt="Seeds Icon" class="h-12 w-12 mr-4">
+      <div>
+        <h4 class="text-xl font-bold mb-2">Seed Import & Distribution</h4>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>High-performance seeds</li>
+          <li>Open-pollinated & hybrid vegetable varieties</li>
+          <li>Disease-resistant options</li>
+          <li>Customized for better yield and resilience.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Technical Assistance & Training -->
+    <div style="background-color: #f3e5ca;" class="rounded-xl p-6 shadow-md flex items-start text-left">
+      <img src="images/training.png" alt="Training Icon" class="h-12 w-12 mr-4">
+      <div>
+        <h4 class="text-xl font-bold mb-2">Technical Assistance & Training</h4>
+        <ul class="list-disc list-inside text-sm space-y-1">
+          <li>Expert-led farmer training</li>
+          <li>Safe use of agrochemicals and veterinary products</li>
+          <li>Workshops for cooperatives and stakeholders</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="bg-green-800 text-white py-12 mt-20">
+    <div class="text-center max-w-xl mx-auto">
+      <h3 class="text-3xl font-semibold mb-3">Let’s Grow Together</h3>
+      <p class="text-sm text-[#EFE6C2] mb-4">
+        The RANGVet Group is proud to serve Ethiopia’s future — and we’d love to work with you.
+      </p>
+      <a href="Contact.html" style="background-color: #D7B077; color: #22361B;" class="inline-block font-semibold px-6 py-2 rounded-full hover:bg-[#E5B983] transition">
+        Contact Us
+    </a>
+      <p class="mt-6 text-xs text-[#EFE6C2]">© 2025 RANGVet Group. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RANGVet PLC |about us</title>
+  <meta name="description" content="Founded in 1996, RANGVet PLC is transforming Ethiopia’s agriculture and veterinary sectors through innovative products, expert guidance, and impactful services.">
+  <meta name="keywords" content="RANGVet, Veterinary, Agrochemicals, Seeds, Ethiopia, Agriculture, Animal Health, Fertilizers, Insecticides, Fungicides, Herbicides">
+  <meta name="author" content="RANGVet PLC">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --rangvet-green: #22361B;
+      --rangvet-gold: #D7B077;
+      --rangvet-light-gold: #DFC39B;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+ <!-- HEADER -->
+<header class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <img src="images/rangvet_logo.png" alt="RANGVet Logo" class="h-20" />
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6 items-center">
+      <a href="index.html" class="hover:text-green-700">Home</a>
+
+      <!-- Dropdown for About Us -->
+      <div class="relative">
+        <button id="aboutDropdownBtn" class="hover:text-green-700 focus:outline-none">
+          About Us
+        </button>
+        <div id="aboutDropdownMenu" class="hidden absolute bg-white shadow-lg rounded mt-2 z-10">
+          <a href="about.html" class="block px-4 py-2 text-sm text-[#22361B] hover:bg-gray-100">About Page</a>
+          <a href="companies.html" class="block px-4 py-2 text-sm text-[#22361B] hover:bg-gray-100">Company Page</a>
+        </div>
+      </div>
+
+      <a href="service.html" class="hover:text-green-700">Services</a>
+      <a href="product.html" class="hover:text-green-700">Products</a>
+      <a href="Contact.html" class="hover:text-green-700">Contact</a>
+    </nav>
+
+    <!-- Get in Touch button -->
+    <a href="Contact.html" class="ml-4 inline-block bg-[#C0712F] text-white px-4 py-2 rounded hover:bg-green-800 transition">
+      Get in Touch
+    </a>
+
+    <!-- Mobile Menu Button (hamburger) -->
+    <div class="md:hidden">
+      <button id="mobileMenuBtn" class="focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6 text-green-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobileMenu" class="md:hidden hidden flex-col bg-white px-6 py-4 shadow-md space-y-4">
+    <a href="index.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Home
+    </a>
+
+    <!-- Mobile About Us dropdown -->
+    <button id="aboutDropdownBtnMobile" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      About Us <span>▾</span>
+    </button>
+    <div id="aboutDropdownMenuMobile" class="hidden pl-4 space-y-2">
+      <a href="about.html" class="text-sm text-[#22361B] hover:text-green-700 block">About Page</a>
+      <a href="companies.html" class="text-sm text-[#22361B] hover:text-green-700 block">Company Page</a>
+    </div>
+
+    <a href="service.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Services
+    </a>
+    <a href="product.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Products
+    </a>
+    <a href="Contact.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Contact
+    </a>
+
+    <!-- Get in Touch button -->
+    <a href="Contact.html" class="mt-4 bg-[#C0712F] text-white px-4 py-2 rounded hover:bg-orange-700 w-fit mx-auto block">
+      Get in Touch
+    </a>
+  </div>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Mobile menu toggle button
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Mobile About Us dropdown toggle
+    const aboutDropdownBtnMobile = document.getElementById("aboutDropdownBtnMobile");
+    const aboutDropdownMenuMobile = document.getElementById("aboutDropdownMenuMobile");
+
+    aboutDropdownBtnMobile.addEventListener("click", () => {
+      aboutDropdownMenuMobile.classList.toggle("hidden");
+    });
+
+    // Desktop About Us dropdown toggle on click + close when clicking outside
+    const aboutDropdownBtn = document.getElementById("aboutDropdownBtn");
+    const aboutDropdownMenu = document.getElementById("aboutDropdownMenu");
+
+    if (aboutDropdownBtn && aboutDropdownMenu) {
+      aboutDropdownBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        aboutDropdownMenu.classList.toggle("hidden");
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!aboutDropdownBtn.contains(e.target) && !aboutDropdownMenu.contains(e.target)) {
+          aboutDropdownMenu.classList.add("hidden");
+        }
+      });
+    }
+  });
+</script>
+
+<!-- Banner Section -->
+<section class="relative">
+  <img
+    src="images/vecteezy_planting-tree-infographic-evolution-concept-sprout-plant_21747413 (1).jpg"
+    alt="About Us Banner"
+    class="w-full h-[60vh] object-cover"
+    loading="lazy"
+  />
+  <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center px-4">
+  <h1 class="text-white text-3xl md:text-5xl font-bold italic px-4 text-center" style="font-family: 'Poppins', sans-serif;">
+    Growing a Sustainable Future
+  </h1>
+</div>
+
+  </div>
+</section>
+
+<!-- About Section with Mission and Vision -->
+<section class="py-12 px-6">
+  <div class="max-w-7xl mx-auto rounded-lg p-8 shadow-md" style="background-color: #D7B077;">
+    <h1 class="text-4xl font-bold mb-6 text-center" style="color: #22361B;">About Us</h1>
+    <p class="text-lg mb-6" style="color: #22361B;">
+      Founded in 1996 in Addis Ababa, Ethiopia, RANGVet PLC is a pioneering, family-owned business with a bold vision: to transform Ethiopia’s agriculture and veterinary sectors by providing world-class products, expert guidance, and reliable services.
+    </p>
+    <p class="text-gray-700 mb-6" style="color: #22361B;">
+      Established by a diverse and experienced team of veterinary specialists, agronomists, engineers, finance professionals, and business managers, RANGVet has grown from a single company into a group of businesses committed to advancing Ethiopia’s agricultural future.
+    </p>
+    <p class="text-gray-700 mb-12" style="color: #22361B;">
+      With over two decades of consistent service, we continue to support farmers, agro-dealers, cooperatives, and institutions by delivering integrated solutions that improve productivity, sustainability, and livelihoods across the country.
+    </p>
+
+    <!-- Mission and Vision Section -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="rounded-xl p-6 shadow-md" style="background-color: #DFC39B;">
+        <h3 class="text-xl font-bold mb-2" style="color: #22361B;">Mission</h3>
+        <p class="text-sm" style="color: #22361B;">
+          To empower Ethiopian farmers and agro-professionals by delivering quality agricultural inputs, veterinary solutions, and equipment—supported by technical expertise and global innovation.
+        </p>
+      </div>
+      <div class="rounded-xl p-6 shadow-md" style="background-color: #DFC39B;">
+        <h3 class="text-xl font-bold mb-2" style="color: #22361B;">Vision</h3>
+        <p class="text-sm" style="color: #22361B;">
+          To become Ethiopia’s leading one-stop shop for agricultural and veterinary solutions, while building strong international partnerships and investing in local manufacturing and development.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Global Partnerships and Contact Section -->
+<section class="py-6 px-6">
+  <div class="max-w-7xl mx-auto rounded-lg p-8 shadow-md" style="background-color: #22361B;">
+    <!-- Global Partnerships -->
+    <h2 class="text-3xl font-bold mb-6 text-center text-white">Global Partnerships</h2>
+    <p class="text-sm mb-6 text-white">
+      The RANGVet Group proudly represents a growing network of multinational companies across:
+    </p>
+    <ul class="text-sm space-y-2 text-white mt-4">
+      <li>✔️ <img src="images/Flag_of_France.svg.png" alt="France Flag" class="inline-block h-4 w-6 mr-2"> France</li>
+      <li>✔️ <img src="images/Flag_of_the_Netherlands.svg.png" alt="Netherlands Flag" class="inline-block h-4 w-6 mr-2"> The Netherlands</li>
+      <li>✔️ <img src="images/Flag_of_South_Korea.svg.png" alt="South Korea Flag" class="inline-block h-4 w-6 mr-2"> South Korea</li>
+      <li>✔️ <img src="images/Flag_of_India.svg.png" alt="India Flag" class="inline-block h-4 w-6 mr-2"> India</li>
+      <li>✔️ <img src="images/Flag_of_South_Africa.svg.png" alt="South Africa Flag" class="inline-block h-4 w-6 mr-2"> South Africa</li>
+      <li>✔️ <img src="images/Flag_of_the_People's_Republic_of_China.svg.png" alt="And More Flag" class="inline-block h-4 w-6 mr-2"> China</li>
+    </ul>
+    <p class="text-sm mt-6 text-white">
+      We work hand-in-hand with our international partners to bring top-tier products and solutions to the Ethiopian market, while helping them build a trusted local footprint.
+    </p>
+    <p class="text-sm mt-4 text-white">
+      We are always open to new partnerships. If you’re looking to enter or expand in Ethiopia, we’re ready to collaborate.
+    </p>
+  </section>
+
+    <!-- Footer -->
+  <footer class="bg-green-800 text-white py-12 mt-20">
+    <div class="text-center max-w-xl mx-auto">
+      <h3 class="text-3xl font-semibold mb-3">Let’s Grow Together</h3>
+      <p class="text-sm text-[#EFE6C2] mb-4">
+        The RANGVet Group is proud to serve Ethiopia’s future — and we’d love to work with you.
+      </p>
+      <a href="Contact.html" style="background-color: #D7B077; color: #22361B;" class="inline-block font-semibold px-6 py-2 rounded-full hover:bg-[#E5B983] transition">
+          Contact Us
+      </a>
+      <p class="mt-6 text-xs text-[#EFE6C2]">© 2025 RANGVet Group. All rights reserved.</p>
+    </div>
+  </footer>
+

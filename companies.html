@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RANGVet PLC | companies</title>
+  <meta name="description" content="Founded in 1996, RANGVet PLC is transforming Ethiopia’s agriculture and veterinary sectors through innovative products, expert guidance, and impactful services.">
+  <meta name="keywords" content="RANGVet, Veterinary, Agrochemicals, Seeds, Ethiopia, Agriculture, Animal Health, Fertilizers, Insecticides, Fungicides, Herbicides">
+  <meta name="author" content="RANGVet PLC">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800">
+ <!-- HEADER -->
+<header class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <img src="images/rangvet_logo.png" alt="RANGVet Logo" class="h-20" />
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6 items-center">
+      <a href="index.html" class="hover:text-green-700">Home</a>
+
+      <!-- Dropdown for About Us -->
+      <div class="relative">
+        <button id="aboutDropdownBtn" class="hover:text-green-700 focus:outline-none">
+          About Us
+        </button>
+        <div id="aboutDropdownMenu" class="hidden absolute bg-white shadow-lg rounded mt-2 z-10">
+          <a href="about.html" class="block px-4 py-2 text-sm text-[#22361B] hover:bg-gray-100">About Page</a>
+          <a href="companies.html" class="block px-4 py-2 text-sm text-[#22361B] hover:bg-gray-100">Company Page</a>
+        </div>
+      </div>
+
+      <a href="service.html" class="hover:text-green-700">Services</a>
+      <a href="product.html" class="hover:text-green-700">Products</a>
+      <a href="Contact.html" class="hover:text-green-700">Contact</a>
+    </nav>
+
+    <!-- Get in Touch button -->
+    <a href="Contact.html" class="ml-4 inline-block bg-[#C0712F] text-white px-4 py-2 rounded hover:bg-green-800 transition">
+      Get in Touch
+    </a>
+
+    <!-- Mobile Menu Button (hamburger) -->
+    <div class="md:hidden">
+      <button id="mobileMenuBtn" class="focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6 text-green-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobileMenu" class="md:hidden hidden flex-col bg-white px-6 py-4 shadow-md space-y-4">
+    <a href="index.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Home
+    </a>
+
+    <!-- Mobile About Us dropdown -->
+    <button id="aboutDropdownBtnMobile" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      About Us <span>▾</span>
+    </button>
+    <div id="aboutDropdownMenuMobile" class="hidden pl-4 space-y-2">
+      <a href="about.html" class="text-sm text-[#22361B] hover:text-green-700 block">About Page</a>
+      <a href="companies.html" class="text-sm text-[#22361B] hover:text-green-700 block">Company Page</a>
+    </div>
+
+    <a href="service.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Services
+    </a>
+    <a href="product.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Products
+    </a>
+    <a href="Contact.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Contact
+    </a>
+
+    <!-- Get in Touch button -->
+    <a href="Contact.html" class="mt-4 bg-[#C0712F] text-white px-4 py-2 rounded hover:bg-orange-700 w-fit mx-auto block">
+      Get in Touch
+    </a>
+  </div>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Mobile menu toggle button
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Mobile About Us dropdown toggle
+    const aboutDropdownBtnMobile = document.getElementById("aboutDropdownBtnMobile");
+    const aboutDropdownMenuMobile = document.getElementById("aboutDropdownMenuMobile");
+
+    aboutDropdownBtnMobile.addEventListener("click", () => {
+      aboutDropdownMenuMobile.classList.toggle("hidden");
+    });
+
+    // Desktop About Us dropdown toggle on click + close when clicking outside
+    const aboutDropdownBtn = document.getElementById("aboutDropdownBtn");
+    const aboutDropdownMenu = document.getElementById("aboutDropdownMenu");
+
+    if (aboutDropdownBtn && aboutDropdownMenu) {
+      aboutDropdownBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        aboutDropdownMenu.classList.toggle("hidden");
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!aboutDropdownBtn.contains(e.target) && !aboutDropdownMenu.contains(e.target)) {
+          aboutDropdownMenu.classList.add("hidden");
+        }
+      });
+    }
+  });
+</script>
+  <script>
+  // Optional: close dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!aboutBtn.contains(e.target) && !aboutMenu.contains(e.target)) {
+      aboutMenu.classList.add("hidden");
+    }
+  });
+</script>
+
+<!-- Optional: Swiper CSS (if you're using Swiper later on) -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+  <!-- Page Heading -->
+  <section class="bg-green-800 text-white py-10 text-center">
+    <h1 class="text-4xl font-bold mb-2">Our Companies</h1>
+    <p class="max-w-2xl mx-auto text-sm text-[#EFE6C2]">
+      Together, these companies form the RANGVet Group — offering solutions in agriculture, veterinary services, trade, engineering, and real estate.
+    </p>
+  </section>
+
+  <!-- Companies Grid -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="space-y-6">
+      <!-- RANGVet PLC -->
+      <div class="bg-[#F8E8D0] rounded-xl p-6 shadow-lg border-2 border-[#C0712F] flex items-start">
+        <img src="images/rangvet_logo.png" alt="RANGVet PLC Logo" class="h-24 w-auto mr-7">
+        <div class="flex-1">
+          <h3 class="text-2xl font-extrabold text-[#22361B] mb-2">1. RANGVET PLC</h3>
+          <p class="text-sm text-[#22361B] mb-4">
+            Core Focus: Import and distribution of veterinary drugs, agrochemicals, and vegetable seeds. Serves farmers, cooperatives, agro-dealers, and government institutions nationwide.
+          </p>
+          <ul class="text-sm text-[#22361B] list-disc list-inside mb-4">
+            <li>Offers technical services and product application training</li>
+            <li>Future-focused, with a vision to establish local manufacturing facilities</li>
+            <li>Committed to affordable, high-quality, and reliable agricultural solutions</li>
+          </ul>
+          <a href="https://www.rangvet.com" target="_blank" class="text-[#C0712F] font-semibold hover:underline">Visit Website</a>
+        </div>
+      </div>
+
+      <!-- GAWT International Business -->
+      <div class="bg-[#F8E8D0] rounded-xl p-6 shadow-md flex items-start">
+        <img src="images/GAWT_logo.png" alt="GAWT International Logo" class="h-16 mr-6">
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-[#22361B] mb-2">2. GAWT International Business</h3>
+          <p class="text-sm text-[#22361B] mb-4">
+            A leading Ethiopian trader, importer, exporter, and supplier of agrochemicals, fertilizers, and seeds.
+          </p>
+          <ul class="text-sm text-[#22361B] list-disc list-inside mb-4">
+            <li>Agricultural commodities and international trade solutions</li>
+            <li>Bridging global suppliers with the Ethiopian market</li>
+            <li>Supporting efficient, high-volume commodity transactions</li>
+          </ul>
+          <a href="https://www.gawtib.com" target="_blank" class="text-[#C0712F] font-semibold hover:underline">Visit Website</a>
+        </div>
+      </div>
+
+      <!-- Rang Engineering -->
+      <div class="bg-[#F8E8D0] rounded-xl p-6 shadow-md flex items-start">
+        <img src="images/Rang Engineering.png" alt="Rang Engineering Logo" class="h-16 mr-6">
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-[#22361B] mb-2">3. Rang Engineering</h3>
+          <p class="text-sm text-[#22361B] mb-4">
+            Focused on importing agricultural equipment and mechanization solutions, Rang Engineering supports Ethiopia's modern farming transformation by:
+          </p>
+          <ul class="text-sm text-[#22361B] list-disc list-inside mb-4">
+            <li>Providing durable and innovative machinery</li>
+            <li>Supporting farmers with installation, training, and after-sales services</li>
+            <li>Empowering productivity through modern tools</li>
+          </ul>
+          <a href="https://www.rangengineering.com" target="_blank" class="text-[#C0712F] font-semibold hover:underline">Visit Website</a>
+        </div>
+      </div>
+
+      <!-- R.A.W. -->
+      <div class="bg-[#F8E8D0] rounded-xl p-6 shadow-md flex items-start">
+        <img src="images/RAW logo.png" alt="R.A.W. Logo" class="h-16 mr-6">
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-[#22361B] mb-2">4. R.A.W.</h3>
+          <p class="text-sm text-[#22361B] mb-4">
+            R.A.W. is a dynamic import-export business based in Addis Ababa, Ethiopia, specializing in:
+          </p>
+          <ul class="text-sm text-[#22361B] list-disc list-inside mb-4">
+            <li>Exporting agricultural commodities from Ethiopia to international markets</li>
+            <li>Importing agrochemicals, vegetable seeds, veterinary drugs, and fertilizers</li>
+            <li>Acting as a key agent for international companies entering Ethiopia</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Rang Real Estate -->
+      <div class="bg-[#F8E8D0] rounded-xl p-6 shadow-md flex items-start">
+        <img src="images/RANG Real Estate logo.png" alt="Rang Real Estate Logo" class="h-16 mr-6">
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-[#22361B] mb-2">5. Rang Real Estate</h3>
+          <p class="text-sm text-[#22361B] mb-4">
+            Rang Real Estate is committed to the development of high-quality mixed-use, residential, and commercial properties, contributing to:
+          </p>
+          <ul class="text-sm text-[#22361B] list-disc list-inside mb-4">
+            <li>Modern, sustainable design</li>
+            <li>Real estate solutions that align with Ethiopia's urban future</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section style="background-color: #D7B077;" class="text-[#22361B] py-12">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-2xl font-bold mb-4">Why Choose Us</h2>
+      <ul class="space-y-2 text-sm">
+        <li>✔️ 25+ years of trusted service</li>
+        <li>✔️ Strong global partnerships</li>
+        <li>✔️ Multidisciplinary technical team</li>
+        <li>✔️ Solutions for all sectors: agro, vet, engineering, real estate</li>
+        <li>✔️ Focused on sustainable local development</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-800 text-white py-12 mt-20">
+    <div class="text-center max-w-xl mx-auto">
+      <h3 class="text-3xl font-semibold mb-3">Let’s Grow Together</h3>
+      <p class="text-sm text-[#EFE6C2] mb-4">
+        The RANGVet Group is proud to serve Ethiopia’s future — and we’d love to work with you.
+      </p>
+      <a href="Contact.html" style="background-color: #D7B077; color: #22361B;" class="inline-block font-semibold px-6 py-2 rounded-full hover:bg-[#E5B983] transition">
+          Contact Us
+      </a>
+      <p class="mt-6 text-xs text-[#EFE6C2]">© 2025 RANGVet Group. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

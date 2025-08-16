@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact RANGVet PLC to learn more about our services, partnerships, and how we support Ethiopian agriculture and veterinary industries." />
+  <title>Contact Us | RANGVet PLC</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-white text-gray-800">
+
+
+<!-- HEADER -->
+<header class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <img src="images/rangvet_logo.png" alt="RANGVet Logo" class="h-20" />
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6 items-center">
+      <a href="index.html" class="hover:text-green-700">Home</a>
+
+      <!-- Dropdown for About Us -->
+      <div class="relative">
+        <button id="aboutDropdownBtn" class="hover:text-green-700 focus:outline-none">
+          About Us
+        </button>
+        <div id="aboutDropdownMenu" class="hidden absolute bg-white shadow-lg rounded mt-2 z-10">
+          <a href="about.html" class="block px-4 py-2 text-sm text-[#22361B] hover:bg-gray-100">About Page</a>
+          <a href="companies.html" class="block px-4 py-2 text-sm text-[#22361B] hover:bg-gray-100">Company Page</a>
+        </div>
+      </div>
+
+      <a href="service.html" class="hover:text-green-700">Services</a>
+      <a href="product.html" class="hover:text-green-700">Products</a>
+      <a href="Contact.html" class="hover:text-green-700">Contact</a>
+    </nav>
+
+    <!-- Get in Touch button -->
+    <a href="Contact.html" class="ml-4 inline-block bg-[#C0712F] text-white px-4 py-2 rounded hover:bg-green-800 transition">
+      Get in Touch
+    </a>
+
+    <!-- Mobile Menu Button (hamburger) -->
+    <div class="md:hidden">
+      <button id="mobileMenuBtn" class="focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6 text-green-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobileMenu" class="md:hidden hidden flex-col bg-white px-6 py-4 shadow-md space-y-4">
+    <a href="index.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Home
+    </a>
+
+    <!-- Mobile About Us dropdown -->
+    <button id="aboutDropdownBtnMobile" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      About Us <span>▾</span>
+    </button>
+    <div id="aboutDropdownMenuMobile" class="hidden pl-4 space-y-2">
+      <a href="about.html" class="text-sm text-[#22361B] hover:text-green-700 block">About Page</a>
+      <a href="companies.html" class="text-sm text-[#22361B] hover:text-green-700 block">Company Page</a>
+    </div>
+
+    <a href="service.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Services
+    </a>
+    <a href="product.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Products
+    </a>
+    <a href="Contact.html" class="text-left text-[#22361B] hover:text-green-700 w-full flex items-center justify-between">
+      Contact
+    </a>
+
+    <!-- Get in Touch button -->
+    <a href="Contact.html" class="mt-4 bg-[#C0712F] text-white px-4 py-2 rounded hover:bg-orange-700 w-fit mx-auto block">
+      Get in Touch
+    </a>
+  </div>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Mobile menu toggle button
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Mobile About Us dropdown toggle
+    const aboutDropdownBtnMobile = document.getElementById("aboutDropdownBtnMobile");
+    const aboutDropdownMenuMobile = document.getElementById("aboutDropdownMenuMobile");
+
+    aboutDropdownBtnMobile.addEventListener("click", () => {
+      aboutDropdownMenuMobile.classList.toggle("hidden");
+    });
+
+    // Desktop About Us dropdown toggle on click + close when clicking outside
+    const aboutDropdownBtn = document.getElementById("aboutDropdownBtn");
+    const aboutDropdownMenu = document.getElementById("aboutDropdownMenu");
+
+    if (aboutDropdownBtn && aboutDropdownMenu) {
+      aboutDropdownBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        aboutDropdownMenu.classList.toggle("hidden");
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!aboutDropdownBtn.contains(e.target) && !aboutDropdownMenu.contains(e.target)) {
+          aboutDropdownMenu.classList.add("hidden");
+        }
+      });
+    }
+  });
+</script>
+
+
+
+<!-- Optional: Swiper CSS (if you're using Swiper later on) -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+  <!-- Page Title -->
+  <div class="bg-green-800 text-white py-6 text-center">
+    <h1 class="text-4xl font-bold">Contact Us</h1>
+    <p class="text-lg mt-2">Let’s connect — we’re here to help and grow together.</p>
+  </div>
+
+  <!-- Contact Section -->
+  <section class="max-w-4xl mx-auto p-6 mt-10">
+    <div class="grid md:grid-cols-2 gap-10">
+
+      <!-- Contact Info -->
+      <div>
+        <h2 class="text-2xl font-semibold text-green-800 mb-4">Get in Touch</h2>
+        <p class="mb-4">We’d love to hear from you — whether you’re a farmer, partner, investor, or just curious about what we do.</p>
+
+        <ul class="space-y-3 text-sm">
+          <li>📍 <strong>Office:</strong> Addis Ababa, Ethiopia</li>
+          <li>📞 <strong>Phone:</strong> +251-911203649 / +251-911523845</li>
+          <li>📧 <strong>Email:</strong> info@rangvet.com</li>
+        </ul>
+
+        <p class="mt-6 text-green-700 font-semibold">We respond to all inquiries within 1–2 business days.</p>
+      </div>
+
+      <!-- Contact Form with AJAX submit -->
+<div>
+  <form id="contactForm" action="contact-process.php" method="POST" class="p-6 rounded-lg shadow-md space-y-4" style="background-color: #D7B077;">
+    <div>
+      <label for="name" class="block text-sm font-medium mb-1">Full Name</label>
+      <input id="name" name="name" type="text" class="w-full border border-gray-300 rounded-md px-4 py-2" placeholder="Your Name" required />
+    </div>
+
+    <div>
+      <label for="email" class="block text-sm font-medium mb-1">Email Address</label>
+      <input id="email" name="email" type="email" class="w-full border border-gray-300 rounded-md px-4 py-2" placeholder="you@example.com" required />
+    </div>
+
+    <div>
+      <label for="message" class="block text-sm font-medium mb-1">Message</label>
+      <textarea id="message" name="message" rows="5" class="w-full border border-gray-300 rounded-md px-4 py-2" placeholder="Write your message..." required></textarea>
+    </div>
+
+    <button id="submitBtn" type="submit" class="bg-green-800 text-white px-6 py-2 rounded hover:bg-green-900 transition">Send Message</button>
+  </form>
+
+  <!-- Thank you message (hidden by default) -->
+  <div id="thankYouMessage" class="hidden p-6 rounded-lg shadow-md text-green-900 font-semibold text-center mt-6" style="background-color: #D7B077;">
+    <h2 class="text-2xl mb-2">Thank you for contacting us!</h2>
+    <p>We will get back to you soon.</p>
+  </div>
+</div>
